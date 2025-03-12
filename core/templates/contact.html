@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Contato | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<style>
+
+body {
+    background-color: #141313;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+  .page-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-horizontal {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.form-control {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.has-error .form-control {
+    border-color: #dc3545;
+}
+
+.has-error .help-block {
+    color: #dc3545;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+</style>
+<div class="page-header">
+    <h1>Fale conosco</h1>
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+              <label for="id_name" class="col-md-3 control-label">Nome</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="id_name" placeholder="Nome" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="id_email" class="col-md-3 control-label">E-mail</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="id_email" placeholder="E-mail" />
+              </div>
+            </div>
+            <div class="form-group has-error">
+              <label for="id_message" class="col-md-3 control-label">Mensagem</label>
+              <div class="col-md-9">
+                <textarea class="form-control" rows="3" id="id_message"></textarea>
+                <span class="help-block">Este campo é obrigatório</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-9 col-md-offset-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

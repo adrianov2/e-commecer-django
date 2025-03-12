@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<div class="container my-5">
+    <h2 class="text-center">Logout</h2>
+    <p class="text-center">Tem certeza que deseja sair da sua conta?</p>
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Produto | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<style>
+     body {
+    background-color: #141313;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .card {
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd); 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  }
+
+  .card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: #0056b3;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .card-text {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.1);
+  }
+
+  .btn-outline-secondary {
+    border: 2px solid #6c757d;
+    border-radius: 25px;
+    color: #6c757d;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  .display-4 {
+    color: #007bff;
+    text-shadow: 3px 3px 8px rgba(0, 123, 255, 0.2);
+    font-weight: bold;
+  }
+</style>
+
+<div class="container">
+    <div class="page-header text-center my-4">
+        <h1 class="display-4 font-weight-bold text-primary">Destaques Acessorios</h1>
+    </div>
+
+    <!-------------------------------- Produtos ----- ACESSORIOS--------------------- -->
+   
+    <div class="row">
+        <!-- acessorios 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Acessorios/a1.webp' %}" class="card-img-top" alt="Produto 1" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">acessorio 1</h5>
+                    <p class="card-text text-center text-muted">Categoria: acessorio</p>
+                    <p class="font-weight-bold text-success text-center">R$ 99,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=1 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=1 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- acessorios 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Acessorios/a2.webp' %}" class="card-img-top" alt="Produto 2" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">acessorio 2</h5>
+                    <p class="card-text text-center text-muted">Categoria: acessorio</p>
+                    <p class="font-weight-bold text-success text-center">R$ 109,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=2 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=2 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- acessorios 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Acessorios/a3.webp' %}" class="card-img-top" alt="Produto 3" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">acessorio 3</h5>
+                    <p class="card-text text-center text-muted">Categoria: acessorios</p>
+                    <p class="font-weight-bold text-success text-center">R$ 119,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header text-center my-4">
+            <h1 class="display-4 font-weight-bold text-primary">Destaques Roupas</h1>
+        </div>
+
+   <!-------------------------------- Produtos ----- ROUPAS--------------------- -->
+
+        <div class="row">
+            <!-- roupa 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/roupas/r1.webp' %}" class="card-img-top" alt="Produto 4" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">roupa 1</h5>
+                        <p class="card-text text-center text-muted">Categoria: roupa</p>
+                        <p class="font-weight-bold text-success text-center">R$ 199,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=1 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=1 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- roupa 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/roupas/r2.webp' %}" class="card-img-top" alt="Produto 5" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">roupa 2</h5>
+                        <p class="card-text text-center text-muted">Categoria: roupa</p>
+                        <p class="font-weight-bold text-success text-center">R$ 259,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=2 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=2 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- roupa 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/roupas/r3.webp' %}" class="card-img-top" alt="Produto 6" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">roupa 3</h5>
+                        <p class="card-text text-center text-muted">Categoria: roupa</p>
+                        <p class="font-weight-bold text-success text-center">R$ 329,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="page-header text-center my-4">
+      <h1 class="display-4 font-weight-bold text-primary">Destaques Celulares</h1>
+  </div>
+
+  <!-------------------------------- Produtos ----- CELULARES--------------------- -->
+  <div class="row">
+      <!-- celulares 1 -->
+      <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+              <img src="{% static 'img/Celulares/c1.webp' %}" class="card-img-top" alt="Produto 4" style="object-fit: cover; height: 250px;">
+              <div class="card-body">
+                  <h5 class="card-title text-center text-primary font-weight-bold">celular 1</h5>
+                  <p class="card-text text-center text-muted">Categoria: celulares</p>
+                  <p class="font-weight-bold text-success text-center">R$ 199,90</p>
+                  <div class="d-flex justify-content-center">
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- celulares 2 -->
+      <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+              <img src="{% static 'img/Celulares/c1.webp' %}" class="card-img-top" alt="Produto 5" style="object-fit: cover; height: 250px;">
+              <div class="card-body">
+                  <h5 class="card-title text-center text-primary font-weight-bold">celulares 2</h5>
+                  <p class="card-text text-center text-muted">Categoria: celulares</p>
+                  <p class="font-weight-bold text-success text-center">R$ 259,90</p>
+                  <div class="d-flex justify-content-center">
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- celulares 3 -->
+      <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+              <img src="{% static 'img/Celulares/c1.webp' %}" class="card-img-top" alt="Produto 6" style="object-fit: cover; height: 250px;">
+              <div class="card-body">
+                  <h5 class="card-title text-center text-primary font-weight-bold">celulares 3</h5>
+                  <p class="card-text text-center text-muted">Categoria: celulares</p>
+                  <p class="font-weight-bold text-success text-center">R$ 329,90</p>
+                  <div class="d-flex justify-content-center">
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                    <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+        <div class="page-header text-center my-4">
+            <h1 class="display-4 font-weight-bold text-primary">Destaques Software</h1>
+        </div>
+    
+        <!------------------------------ Produtos ---- SOFTWARE------------------------- -->
+        <div class="row">
+            <!-- software 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/Software/s1.webp' %}" class="card-img-top" alt="Produto 1" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">software 1</h5>
+                        <p class="card-text text-center text-muted">Categoria: Software </p>
+                        <p class="font-weight-bold text-success text-center">R$ 99,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!--software 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/Software/s2.webp' %}" class="card-img-top" alt="Produto 2" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">software 2</h5>
+                        <p class="card-text text-center text-muted">Categoria: Software</p>
+                        <p class="font-weight-bold text-success text-center">R$ 109,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- software 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                    <img src="{% static 'img/Software/s3.webp' %}" class="card-img-top" alt="Produto 3" style="object-fit: cover; height: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary font-weight-bold">software 3</h5>
+                        <p class="card-text text-center text-muted">Categoria: software</p>
+                        <p class="font-weight-bold text-success text-center">R$ 119,90</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                            <a href="{% url 'add_to_cart' product_id=3 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+  </div>
+</div>
+</div>
+
+
+
+{% endblock %}

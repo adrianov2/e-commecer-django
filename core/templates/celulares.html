@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Produto | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+<style>
+
+body {
+    background-color: #141313;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+ .card {
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(135deg, #f8f9fa, #e3f2fd); 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #0056b3;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-text {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.1);
+}
+
+.btn-outline-secondary {
+    border: 2px solid #6c757d;
+    border-radius: 25px;
+    color: #6c757d;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.display-4 {
+    color: #007bff;
+    text-shadow: 3px 3px 8px rgba(0, 123, 255, 0.2);
+    font-weight: bold;
+}
+
+</style>
+
+<div class="container">
+    <div class="page-header text-center my-4">
+        <h1 class="display-4 font-weight-bold text-primary">Produtos</h1>
+    </div>
+
+    <div class="row">
+        <!-- celulares 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c1.webp' %}" class="card-img-top" alt="Produto 1" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 1</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 1.900,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=30 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=30 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- celulares 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c2.webp' %}" class="card-img-top" alt="Produto 2" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 2</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 800,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=31 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=31 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- celulares 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c3.webp' %}" class="card-img-top" alt="Produto 3" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 3</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 599,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=32 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=32 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header text-center my-4">
+            <h1 class="display-4 font-weight-bold text-primary">#</h1>
+        </div>
+
+    <div class="row">
+        <!-- celulares 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c4.webp' %}" class="card-img-top" alt="Produto 4" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 4</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 600,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=33 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=33 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- celulares 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c5.webp' %}" class="card-img-top" alt="Produto 5" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 5</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 700,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=34 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=34 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- celulares 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c6.webp' %}" class="card-img-top" alt="Produto 6" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 6</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 500,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=35 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=35 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header text-center my-4">
+            <h1 class="display-4 font-weight-bold text-primary">#</h1>
+        </div>
+
+    <div class="row">
+        <!-- celulares 7 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c7.webp' %}" class="card-img-top" alt="Produto 7" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 7</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 900,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=36 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=36 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- celulares 8 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c8.webp' %}" class="card-img-top" alt="Produto 8" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 8</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 300,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=37 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=37 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- celulares 9 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 rounded-lg overflow-hidden">
+                <img src="{% static 'img/Celulares/c9.webp' %}" class="card-img-top" alt="Produto 9" style="object-fit: cover; height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-primary font-weight-bold">celulares 9</h5>
+                    <p class="card-text text-center text-muted">Categoria: celulares </p>
+                    <p class="font-weight-bold text-success text-center">R$ 400,90</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'add_to_cart' product_id=38 %}" class="btn btn-primary btn-sm mr-2">Comprar</a>
+                        <a href="{% url 'add_to_cart' product_id=38 %}" class="btn btn-outline-secondary btn-sm">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

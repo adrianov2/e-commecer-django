@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<style>
+    
+    body {
+    background-color: #141313;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+.container {
+    max-width: 800px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Título da página */
+h2 {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo dos labels e inputs */
+.form-label {
+    font-size: 1.1rem;
+    color: #495057;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Botão de salvar alterações */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    display: block;
+    margin: 20px auto 0;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-control {
+        font-size: 1rem;
+    }
+
+    .btn-success {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+
+</style>
+<div class="container my-5">
+    <h2 class="text-center">Editar Perfil</h2>
+    <form method="POST" action="{% url 'editar_perfil' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{ user.name }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" name="email" class="form-control" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="text" id="phone" name="phone" class="form-control" value="{{ user.phone }}">
+        </div>
+        <button type="submit" class="btn btn-success">Salvar Alterações</button>
+    </form>
+</div>
+{% endblock %}

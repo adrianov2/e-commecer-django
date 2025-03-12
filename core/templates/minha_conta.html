@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block container %}
+<style>
+
+body {
+    background-color: #141313;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+
+
+h2 {
+    color: #d4d7db;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #0d4277;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+}
+
+h4 {
+    color: #fbfdff;
+    font-weight: bold;
+}
+
+p {
+    color: #e5e6e7;
+}
+
+h5 {
+    color: #e0e4e7;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 10px 0;
+}
+
+.list-group-item a {
+    color: #d9dee4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.list-group-item a:hover {
+    color: #dfe5eb;
+    text-decoration: underline;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+.text-danger:hover {
+    color: #a71d2a !important;
+}
+
+</style>
+<div class="container my-5">
+    <h2 class="text-center">Minha Conta</h2>
+    
+    <div class="card p-4">
+        <h4>Bem-vindo, {{ user.username }}!</h4>
+        <p>Email: {{ user.email }}</p>
+        
+        <h5 class="mt-4">Opções da Conta</h5>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'editar_perfil' %}">Editar Perfil</a></li>
+            <li class="list-group-item"><a href="{% url 'historico' %}">Histórico de Pedidos</a></li>
+            <li class="list-group-item"><a href="{% url 'logout' %}" class="text-danger">Sair</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
